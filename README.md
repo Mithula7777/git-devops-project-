@@ -1,85 +1,148 @@
-# Version-Controlled DevOps Project Using Git
+# Git Version Control DevOps Project
 
-## Project Overview
-This project demonstrates the use of Git for version control and GitHub for remote repository management. The project was created on an AWS EC2 instance running Amazon Linux 2023.
+## 1. Project Overview
 
-## Technologies Used
+This project demonstrates how Git and GitHub are used in a DevOps workflow to manage source code, maintain different branches, track changes, and collaborate through Pull Requests.
+
+The project was performed using an AWS EC2 Linux instance.
+
+## 2. Objective
+
+- Understand Git version control.
+- Create and manage multiple Git branches.
+- Develop features using a separate feature branch.
+- Use Pull Requests to review and merge changes.
+- Maintain project files using Git.
+- Use `.gitignore` to exclude unnecessary files.
+- Create version tags.
+- Document the complete workflow using Markdown.
+
+## 3. Tools and Technologies
+
 - AWS EC2
-- Amazon Linux 2023
+- Amazon Linux
 - Git
 - GitHub
-- HTML
+- Markdown
+- Linux Terminal
 
-## Project Architecture
-
-AWS EC2 (Amazon Linux 2023)
-       |
-       v
-   Git Repository
-       |
-       v
-   Git Add
-       |
-       v
-   Git Commit
-       |
-       v
-   GitHub Remote Repository
-       |
-       v
-   Git Push
-
-## Implementation Steps
-
-1. Created an AWS EC2 instance using Amazon Linux 2023.
-2. Connected to the EC2 instance.
-3. Updated Linux packages.
-4. Installed Git.
-5. Configured Git username and email.
-6. Created a project directory.
-7. Created an HTML file named `index.html`.
-8. Initialized a local Git repository using `git init`.
-9. Added files to the staging area using `git add`.
-10. Committed changes using `git commit`.
-11. Created a remote repository on GitHub.
-12. Connected the local repository to GitHub using `git remote add origin`.
-13. Uploaded the project using `git push`.
-
-## Git Commands Used
-
-```bash
-git init
-git config --global user.name "Mithula"
-git config --global user.email "YOUR_GITHUB_EMAIL"
-git add index.html
-git status
-git commit -m "Add index.html"
-git branch
-git remote add origin REPOSITORY_URL
-git remote -v
-git push -u origin master
-```
-
-## Project File Structure
+## 4. Project Structure
 
 ```text
 git-devops-project/
 │
 ├── index.html
-└── README.md
+├── README.md
+├── .gitignore
+│
+└── docs/
+    └── git-workflow.md
 ```
 
-## Learning Outcomes
+## 5. Git Repository Initialization
 
-- Understanding Git version control.
-- Managing local and remote repositories.
-- Understanding Git staging and commits.
-- Working with Git branches.
-- Connecting AWS EC2 with GitHub.
-- Uploading project files to GitHub using Git.
+Initialized a local Git repository and connected it to a remote GitHub repository.
 
-## Author
-Mithula
+Commands used:
 
-## GitHub Repository
-https://github.com/Mithula7777/git-devops-project-
+```bash
+git init
+git remote add origin <GitHub-repository-URL>
+git add .
+git commit -m "Initial commit"
+git push -u origin main
+```
+
+## 6. Branch Management
+
+Created three branches to organize development:
+
+- **main** – Main project branch.
+- **dev** – Development branch.
+- **feature** – Branch used to develop new features.
+
+Commands used:
+
+```bash
+git branch
+git checkout -b dev
+git push -u origin dev
+
+git checkout -b feature
+git push -u origin feature
+```
+
+## 7. Feature Development
+
+Modified `index.html` in the feature branch by adding a new feature section.
+
+Changes were committed and pushed to GitHub.
+
+```bash
+git add index.html
+git commit -m "Add feature branch update to homepage"
+git push -u origin feature
+```
+
+## 8. Pull Requests and Merging
+
+Used GitHub Pull Requests to merge code changes between branches.
+
+The workflow involved:
+- Creating a Pull Request.
+- Selecting the base and compare branches.
+- Reviewing the changes.
+- Merging and closing the Pull Request.
+
+## 9. Git Ignore
+
+Created a `.gitignore` file to prevent unnecessary files and sensitive environment configuration files from being tracked.
+
+Entries included:
+
+```text
+*.log
+.env
+node_modules/
+.DS_Store
+```
+
+## 10. Git Version Tagging
+
+Created a version tag to identify the first project version.
+
+```bash
+git tag -a v1.0 -m "First version of Git DevOps project"
+git push origin v1.0
+```
+
+## 11. Project Documentation
+
+Created `docs/git-workflow.md` to document the project objective, tools, branching, feature development, Pull Requests, Git ignore, tagging, and outcome.
+
+## 12. Important Git Commands Learned
+
+| Command | Purpose |
+|---|---|
+| `git status` | Check repository status |
+| `git branch` | List branches |
+| `git checkout` | Switch branches |
+| `git add .` | Stage changes |
+| `git commit` | Save changes |
+| `git push` | Upload changes to GitHub |
+| `git pull` | Download remote changes |
+| `git fetch` | Fetch remote updates |
+| `git merge` | Merge branches |
+| `git log` | View commit history |
+| `git tag` | Manage version tags |
+| `git remote -v` | View remote repository |
+
+## 13. Outcome
+
+Successfully practised Git and GitHub version control using an AWS EC2 Linux environment.
+
+Learned repository initialization, branch management, feature development, commits, pushing and pulling changes, Pull Requests, `.gitignore`, version tagging, and Markdown documentation.
+
+## 14. GitHub Repository
+
+GitHub Repository: https://github.com/Mithula7777/git-devops-project
